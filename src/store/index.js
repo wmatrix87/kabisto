@@ -1,14 +1,15 @@
+/* eslint-disable no-console */
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import createReducer from './reducers';
 
-const logger = store => next => action => {
-  console.log('dispatching', action);
-  console.log('prev state', store.getState());
-  let result = next(action);
-  console.log('next state', store.getState());
-  return result
+const logger = (store) => (next) => (action) => {
+  console.info('dispatching', action);
+  console.info('prev state', store.getState());
+  const result = next(action);
+  console.info('next state', store.getState());
+  return result;
 };
 
 const middlewares = [logger];

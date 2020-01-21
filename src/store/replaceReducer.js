@@ -9,9 +9,9 @@ const replaceReducer = (nameSpace, reducer) => {
   } else {
     console.warn(`Injecting reducer for ${nameSpace}`); // eslint-disable-line
   }
-  
+
   asyncReducers[nameSpace] = reducer;
-  
+
   store.replaceReducer(createReducer(asyncReducers));
 };
 

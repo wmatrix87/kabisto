@@ -1,4 +1,4 @@
-import { ARTICLE, ADD_ARTICLE, ARTICLE_ACTION } from '../constants/action-types';
+import { ADD_ARTICLE, ARTICLE_ACTION } from '../constants/action-types';
 
 const initialState = {
   articles: [],
@@ -10,7 +10,7 @@ function rootReducer(state = initialState, action) {
     return { ...state, ...action };
   }
   if (action.type === ARTICLE_ACTION) {
-    return { ...state, ...action  };
+    return { ...state, ...action };
   }
   return state;
 }
